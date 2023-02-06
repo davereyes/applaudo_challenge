@@ -1,0 +1,37 @@
+name: domain
+description: Business logic rules
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # dart & utils
+  freezed_annotation: ^2.2.0
+  equatable: ^2.0.5
+  json_annotation: ^4.8.0
+
+
+  #intern
+  data:
+    path: ../data
+
+
+dev_dependencies:
+  build_runner: ^2.3.3
+  freezed: ^2.3.2
+  faker: ^2.1.0
+  json_serializable: ^6.6.1
+
+  flutter_test:
+    sdk: flutter
+
+  #linter
+  flutter_lints: ^2.0.0
+  dart_code_metrics: ^5.4.0
+
+flutter:
+  uses-material-design: true

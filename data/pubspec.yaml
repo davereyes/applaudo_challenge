@@ -1,0 +1,43 @@
+name: data
+description: Data sources
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  equatable: ^2.0.5
+  meta: ^1.8.0
+  uuid: ^3.0.7
+  rxdart: ^0.27.7
+  shared_preferences: ^2.0.17
+  logger: ^1.1.0
+  path_provider: ^2.0.12
+
+  # network
+  dio: ^4.0.6
+  pretty_dio_logger: ^1.1.1  # this supports dio 4.0.6
+  json_annotation: ^4.8.0
+
+  # di
+  get_it: 7.2.0
+
+  #intern
+  domain:
+    path: ../domain
+  freezed_annotation: ^2.2.0
+
+dev_dependencies:
+  flutter_lints: ^2.0.1
+  build_runner: ^2.3.3
+  json_serializable: ^6.3.1
+  test: ^1.22.2
+  very_good_analysis: ^3.1.0
+  mocktail: ^0.3.0
+  freezed: ^2.3.2
+
+flutter:
+  uses-material-design: true

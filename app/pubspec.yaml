@@ -1,0 +1,66 @@
+name: applaudo_challenge
+description: Aplaudo's Code Challenge
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+  dependencies:
+  very_good_analysis: ^3.1.0
+
+  #utils
+  logger: ^1.1.0
+  uuid: ^3.0.7
+  equatable: ^2.0.5
+  path_provider: ^2.0.12
+
+  # state management
+  bloc: 8.1.0
+  flutter_bloc: ^8.1.1
+
+  # di
+  get_it: 7.2.0
+
+  # internal
+  domain:
+    path: ../domain
+  data:
+    path: ../data
+
+dev_dependencies:
+  bloc_test: ^9.1.0
+  flutter_test:
+    sdk: flutter
+  mockingjay: ^0.3.0
+  mocktail: ^0.3.0
+#  very_good_analysis: ^3.0.2
+
+  #linter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Inter-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-Semibold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
