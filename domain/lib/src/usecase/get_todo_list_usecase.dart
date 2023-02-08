@@ -5,6 +5,9 @@ class GetTodoListUseCase {
 
   GetTodoListUseCase(this._repository);
 
-  Future<Result<Todo>> call() async => await _repository.getTodoList();
+  Future<List<Todo>> call() async {
+    final response = await _repository.getTodoList();
+    return response;
+  }
 
 }

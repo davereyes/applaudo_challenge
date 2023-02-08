@@ -23,7 +23,7 @@ Map<String, dynamic> _$TodoFieldsDtoToJson(TodoFieldsDto instance) {
     }
   }
 
-  writeNotNull('name', instance.todoTitle);
+  writeNotNull('name', instance.title);
   writeNotNull('categoryId', instance.categoryId);
   writeNotNull('date', instance.date?.toIso8601String());
   writeNotNull('isCompleted', instance.isCompleted);

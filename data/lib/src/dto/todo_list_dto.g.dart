@@ -14,5 +14,5 @@ TodoListDto _$TodoListDtoFromJson(Map<String, dynamic> json) => TodoListDto(
 
 Map<String, dynamic> _$TodoListDtoToJson(TodoListDto instance) =>
     <String, dynamic>{
-      'documents': instance.todoList,
+      'documents': instance.todos,
     };

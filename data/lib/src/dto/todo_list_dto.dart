@@ -6,9 +6,9 @@ part 'todo_list_dto.g.dart';
 @JsonSerializable(includeIfNull: false)
 class TodoListDto {
   @JsonKey(name: 'documents')
-  final List<TodoDto> todoList;
+  final List<TodoDto> todos;
 
-  const TodoListDto(this.todoList);
+  const TodoListDto(this.todos);
 
   factory TodoListDto.fromJson(Map<String, dynamic> json) =>
       _$TodoListDtoFromJson(json);

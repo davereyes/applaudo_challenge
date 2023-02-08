@@ -4,6 +4,7 @@ class Result<T> {
   final T? _data;
   final Error? _error;
 
+
   const Result._(this._data, this._error);
 
   factory Result.success(T data) => Result._(data, null);
@@ -38,9 +39,12 @@ class Result<T> {
     } else if (data != null) {
       return success?.call(data);
     }
+    
 
     return failed?.call(const Error.message('Unknown error'));
   }
 
+
   bool isSuccess() => _data != null && _error == null;
+
 }

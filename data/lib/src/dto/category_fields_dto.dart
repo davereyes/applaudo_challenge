@@ -5,11 +5,10 @@ part 'category_fields_dto.g.dart';
 
 @JsonSerializable(includeIfNull: false)
 class CategoryFieldsDto {
-  @JsonKey(name: 'name')
-  final String? categoryName;
+  final String? name;
   final String? color;
 
-  const CategoryFieldsDto(this.categoryName, this.color);
+  const CategoryFieldsDto(this.name, this.color);
 
   factory CategoryFieldsDto.fromJson(Map<String, dynamic> json) =>
       _$CategoryFieldsDtoFromJson(json);

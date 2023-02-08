@@ -14,7 +14,7 @@ TodoDto _$TodoDtoFromJson(Map<String, dynamic> json) => TodoDto(
 
 Map<String, dynamic> _$TodoDtoToJson(TodoDto instance) {
   final val = <String, dynamic>{
-    'fields': instance.todoFields,
+    'fields': instance.fields,
   };
 
   void writeNotNull(String key, dynamic value) {

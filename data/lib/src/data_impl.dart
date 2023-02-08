@@ -5,14 +5,10 @@ import 'package:data/src/common/object_mapper.dart';
 import 'package:data/src/datasource/api/applaudo_api.dart';
 import 'package:data/src/repository/applaudo_api_repository_impl.dart';
 import 'package:data/src/di.dart';
-import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:domain/domain.dart';
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class DataImpl extends Data {
   DataImpl._();
@@ -28,11 +24,11 @@ class DataImpl extends Data {
       }) async {
     getIt = externalGetIt;
     getIt.get<Logger>().d('Initializing Data module...');
-    //getIt.registerSingleton(ObjectMapper(logger: getIt.get()));
+    getIt.registerSingleton(ObjectMapper());
 
     // network configuration
     final Dio dio = Dio(BaseOptions(
-      baseUrl: baseUrl,
+      baseUrl: baseUrl = 'https://firestore.googleapis.com/v1',
       receiveTimeout: 60000,
       // 1 minute
       connectTimeout: 60000,

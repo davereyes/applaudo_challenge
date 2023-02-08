@@ -22,3 +22,8 @@ export 'package:domain/src/usecase/create_todo_usecase.dart';
 export 'package:domain/src/usecase/get_todo_usecase.dart';
 export 'package:domain/src/usecase/get_todo_list_usecase.dart';
 export 'package:domain/src/usecase/update_todo_usecase.dart';
+
+///
+/// status
+///
+export 'package:domain/src/status/todo_filter.dart';

@@ -18,24 +18,62 @@ class ApplaudoApi {
   static const String kAddCategory =
       'projects/applaudo-todo-app/databases/(default)/documents/categories?key={{firebase_api_key}}';
 
+  static String kUpdateTodo(String id) => '/$id';
+
+
 
   final Dio dio;
 
   const ApplaudoApi(this.dio);
 
+  ///
+  ///  create Todo
+  ///
+  Future<TodoDto> createTodo(String title, String category, DateTime dateTime)
+  async {
+    final response = await dio.post(
+        kAddTask,
+        data: {
+          'fields': {
+            'date':{
+              'integerValue': dateTime,
+            },
+            'categoryID': {
+              'stringValue': category
+            },
+            'name': {
+              'stringValue': title
+            },
+          }
+        }
+    );
+    if (response.data == null || !(response.data is Map<String, dynamic>)) {
+      throw Exception('Please try later');
+    }
+    return TodoDto.fromJson(response.data);
+  }
 
   ///
   ///  Create todo
   ///
-  Future<TodoDto> getTodo() async {
-    final response = await dio.get(kGetTask);
+  Future<TodoDto> getTodo(String id) async {
+    final response = await dio.get(
+        kGetTask,
+        queryParameters: {
+          'fields': {
+            'id':{
+              'integerValue': id,
+            },
+          }
+        }
+    );
     return TodoDto.fromJson(response.data);
   }
 
   ///
   ///  Get todo list
   ///
-  Future<TodoListDto> todoList() async {
+  Future<TodoListDto> getTodoList() async {
     final response = await dio.request(kGetTask);
     return TodoListDto.fromJson(response.data,);
   }
@@ -43,17 +81,20 @@ class ApplaudoApi {
   ///
   ///  Get category
   ///
-  Future<CategoryDto> category() async {
+  Future<CategoryDto> getCategory() async {
     final response = await dio.request(kGetCategory);
     return CategoryDto.fromJson(response.data,);
   }
 
+
   ///
-  ///  create Invoice
+  ///  Update Todo
   ///
-  Future<TodoDto> createTodo() async {
-    final response = await dio.request(kGetTask);
-    return TodoDto.fromJson(response.data,);
+  Future<Result<TodoDto>> updateTodo(String todoId, bool isCompleted) async {
+    final response = await dio.put(
+      kUpdateTodo(),
+    );
+    return TodoDto.fromJson(response.data);
   }
 
 }

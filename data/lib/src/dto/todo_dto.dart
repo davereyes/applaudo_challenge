@@ -5,12 +5,11 @@ part 'todo_dto.g.dart';
 
 @JsonSerializable(includeIfNull: false)
 class TodoDto {
-  @JsonKey(name: 'fields') //mantener como fields
-  final TodoFieldsDto todoFields;
+  final TodoFieldsDto fields;
   final String? createTime;
   final String? updateTime;
 
-  const TodoDto(this.todoFields, this.createTime, this.updateTime);
+  const TodoDto(this.fields, this.createTime, this.updateTime);
 
   factory TodoDto.fromJson(Map<String, dynamic> json) =>
       _$TodoDtoFromJson(json);

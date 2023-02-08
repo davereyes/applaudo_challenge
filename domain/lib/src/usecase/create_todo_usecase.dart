@@ -5,7 +5,13 @@ class CreateTodoUseCase {
 
   CreateTodoUseCase(this._repository);
 
-  Future<Result<Todo>> call()
-  async => await _repository.createTodo();
+  Future<Result<Todo>> call(
+      String title,
+      String category,
+      DateTime dateTime,
+      ) async {
+    final response = await _repository.createTodo(title, category, dateTime);
+    return response;
+  }
 
 }

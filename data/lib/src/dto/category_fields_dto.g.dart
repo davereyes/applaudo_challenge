@@ -21,7 +21,7 @@ Map<String, dynamic> _$CategoryFieldsDtoToJson(CategoryFieldsDto instance) {
     }
   }
 
-  writeNotNull('name', instance.categoryName);
+  writeNotNull('name', instance.name);
   writeNotNull('color', instance.color);
   return val;
 }
